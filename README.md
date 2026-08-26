@@ -9,7 +9,7 @@
 
 ##  Project Overview
 
-You will build a single-page application featuring an authentication flow and a protected dashboard. The goal is to get hands-on experience with modern Angular patterns—specifically how Angular handles state, forms, routing, and data fetching **without** legacy `NgModule` boilerplate.
+You will build a single-page application featuring an authentication flow and a protected dashboard. The goal is to get hands-on experience with modern Angular patterns; specifically how Angular handles state, forms, routing, and data fetching **without** legacy `NgModule` boilerplate.
 
 ---
 
