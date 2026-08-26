@@ -1,5 +1,5 @@
 
-# 🚀 Onboarding Project: Auth & Task Dashboard Spec
+#  Onboarding Project: Auth & Task Dashboard Spec
 
 **Target Stack:** Angular v22+, TypeScript, CSS/SCSS
 
@@ -7,13 +7,13 @@
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 You will build a single-page application featuring an authentication flow and a protected dashboard. The goal is to get hands-on experience with modern Angular patterns—specifically how Angular handles state, forms, routing, and data fetching **without** legacy `NgModule` boilerplate.
 
 ---
 
-## 📋 Acceptance Criteria Checklist
+##  Acceptance Criteria Checklist
 
 ### Phase 1: Authentication State (`AuthService`)
 
@@ -24,7 +24,6 @@ You will build a single-page application featuring an authentication flow and a 
 * [ ] Implement a `login(user, token)` method that sets state and saves a mock token to `localStorage`.
 * [ ] Implement a `logout()` method that clears state and removes the token from `localStorage`.
 
-> 💡 **React Bridge Note:** An Angular `@Injectable()` service acts like a combination of a React Context Provider and a custom hook, but without requiring component wrapping or trigger re-renders up the tree.
 
 ---
 
@@ -48,7 +47,7 @@ You will build a single-page application featuring an authentication flow and a 
 
 
 
-> 💡 **React Bridge Note:** Signal Forms handle two-way data sync and validation state out of the box. Reading field states like `myForm.email().invalid()` gives you fine-grained reactive updates similar to `react-hook-form`.
+>  **Note:** Signal Forms handle two-way data sync and validation state out of the box. Reading field states like `myForm.email().invalid()` gives you fine-grained reactive updates similar to `react-hook-form`.
 
 ---
 
@@ -79,7 +78,7 @@ You will build a single-page application featuring an authentication flow and a 
 
 
 
-> 💡 **React Bridge Note:** `httpResource()` is Angular’s native answer to `useQuery` / TanStack Query. It returns reactive signals for `.value()`, `.isLoading()`, and `.error()`.
+>  **Note:** `httpResource()` is Angular’s native answer to `useQuery` / TanStack Query. It returns reactive signals for `.value()`, `.isLoading()`, and `.error()`.
 
 ---
 
@@ -90,7 +89,7 @@ You will build a single-page application featuring an authentication flow and a 
 
 ---
 
-## 🛠️ Definition of Done
+##  Definition of Done
 
 1. Zero `NgModule` usage (all components/services use Standalone APIs).
 2. Clean separation of concern: state/HTTP calls inside services, UI logic inside components.
@@ -103,7 +102,7 @@ Here is a **PR Review Rubric & Testing Checklist** tailored for reviewing this o
 
 ---
 
-## 🔍 Code Review Rubric
+##  Code Review Rubric
 
 ### 1. Modern Angular Architecture & Control Flow
 
@@ -136,7 +135,7 @@ Here is a **PR Review Rubric & Testing Checklist** tailored for reviewing this o
 
 ---
 
-## 🧪 Manual QA Testing Checklist
+##  Manual QA Testing Checklist
 
 Copy and test these scenarios on their running application:
 
@@ -170,37 +169,26 @@ Copy and test these scenarios on their running application:
 * [ ] Press browser back button.
 * [ ] **Expected Result:** Route guard blocks re-entry to `/dashboard` and keeps user on `/login`.
 
-### Scenario 6: Persistence (Stretch Goal)
+### Scenario 6: Persistence 
 
 * [ ] Log in, refresh browser tab on `/dashboard`.
 * [ ] **Expected Result:** User remains logged in without being kicked to `/login`.
 
 ---
 
-## 💡 Common React-to-Angular Coaching Notes
+##  Common React-to-Angular Coaching Notes
 
 When leaving review comments, these pointers help bridge the React mental model:
 
-> 💬 **If they write custom functions instead of Services:**
+>  **If you write custom functions instead of Services:**
 > *"In React, you'd use a custom hook here. In Angular, singletons provided via `@Injectable({ providedIn: 'root' })` are the idiomatic way to hold shared state across routes."*
 
-> 💬 **If they call methods inside template expressions:**
+>  **If you call methods inside template expressions:**
 > *"Calling `getUserName()` in the template runs on every change detection cycle. Use a `computed()` signal instead so Angular only recomputes it when the underlying signal changes."*
 
-> 💬 **If they manually subscribe to HTTP calls:**
+>  **If you manually subscribe to HTTP calls:**
 > *"Rather than `.subscribe()`, prefer `httpResource()`. It automatically manages loading, error, and data signals, similar to `useQuery` in React Query."*
 
-**Yes, absolutely.** `angular.dev` is hands-down the best place to send them.
-
-When Angular revamped its documentation site, they built it specifically to teach **modern, standalone, signal-based Angular**. Unlike the old `angular.io` site (which was notorious for throwing legacy boilerplate at newcomers), `angular.dev` feels fresh, modern, and very friendly to developers coming from React.
-
----
-
-## Why `angular.dev` Works So Well for React Devs
-
-* **Interactive Playground (`angular.dev/tutorials`):** They can run and edit code in an embedded browser environment without having to set up a local CLI or node modules first.
-* **Modern by Default:** Everything on the site defaults to Standalone Components, Signals, and `@if`/`@for` control flow. They won't accidentally stumble into 2018-era `NgModule` tutorials.
-* **Deep Dive Guides:** The guides for **Signals**, **Routing**, and **Data Fetching** are concise and focus on *why* things work the way they do rather than just dumping boilerplate.
 
 ---
 
@@ -214,8 +202,4 @@ When you hand them the docs, point them directly to these sections so they don't
 
 ---
 
-## One Crucial Warning to Give Them
 
-> **"If you Google a problem, ignore any article written before 2024 or anything that mentions `NgModule` or `*ngIf`."**
-
-The biggest trap for a junior dev learning Angular today is landing on 6-year-old StackOverflow posts or Medium articles teaching legacy patterns. Remind them: if a tutorial tells them to import `BrowserModule` or create an `@NgModule`, it's outdated—stick to `angular.dev` or your team's code review notes.
