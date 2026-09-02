@@ -188,9 +188,9 @@ When leaving review comments, these pointers help bridge the React mental model:
 
 ---
 
-## Specific Pages to Bookmark for Them
+## Specific Pages to Bookmark 
 
-When you hand them the docs, point them directly to these sections so they don't get lost:
+Use these in addition to other resources to guide you:
 
 1. **[Angular Essentials Tutorial](https://angular.dev/tutorials/first-app):** A quick, hands-on walkthrough that covers components, inputs/outputs, and signals in under 30 minutes.
 2. **[Signals Guide](https://angular.dev/guide/signals):** Essential reading. It explains `signal()`, `computed()`, and `effect()`, which will instantly make sense to anyone who knows React state and `useMemo`.
