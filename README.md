@@ -17,8 +17,8 @@ You will build a single-page application featuring an authentication flow and a 
 
 ### Phase 1: Authentication State (`AuthService`)
 
-* [ ] Create an `AuthService` provided at the root level.
-* [ ] Store the current user state using a writable `signal<User null |>(null)`.
+* [ ] Create an `AuthService` provided at the root level. You can use the Service decorator.
+* [ ] Store the current user state using a writable `signal<User | null>(null)`.
 * [ ] Expose a `currentUser` read-only signal to components.
 * [ ] Create a `computed()` signal named `isAuthenticated` that returns `true` if `currentUser` is not `null`.
 * [ ] Implement a `login(user, token)` method that sets state and saves a mock token to `localStorage`.
@@ -39,7 +39,7 @@ You will build a single-page application featuring an authentication flow and a 
 
 * [ ] Bind HTML inputs using the `[formField]` directive.
 * [ ] Display dynamic validation error messages **only** if the field is `touched()` and `invalid()`.
-* [ ] Disable the submit button whenever the form is `invalid()`.
+* [ ] Do not disable the submit button whenever the form is `invalid()`.
 * [ ] On submission:
 * Prevent default browser form submission.
 * Call `AuthService.login()` with mock user details.
@@ -98,11 +98,7 @@ You will build a single-page application featuring an authentication flow and a 
 
 ---
 
-Here is a **PR Review Rubric & Testing Checklist** tailored for reviewing this onboarding project. It focuses on modern Angular practices and catching common habits React developers bring over when learning Angular.
-
----
-
-##  Code Review Rubric
+##  Code Review
 
 ### 1. Modern Angular Architecture & Control Flow
 
@@ -146,10 +142,10 @@ Copy and test these scenarios on their running application:
 
 ### Scenario 2: Form Validation
 
-* [ ] Type an invalid email (`test@com`) into the email field and blur out of the field.
-* [ ] **Expected Result:** Validation message displays. Login button remains disabled.
+* [ ] Type an invalid email (`test@com`) into the email field and focus out of the field.
+* [ ] **Expected Result:** Validation message displays. 
 * [ ] Type a valid email and password.
-* [ ] **Expected Result:** Validation message disappears. Login button enables.
+* [ ] **Expected Result:** Validation message disappears. 
 
 ### Scenario 3: Auth & Protected Dashboard
 
@@ -181,7 +177,7 @@ Copy and test these scenarios on their running application:
 When leaving review comments, these pointers help bridge the React mental model:
 
 >  **If you write custom functions instead of Services:**
-> *"In React, you'd use a custom hook here. In Angular, singletons provided via `@Injectable({ providedIn: 'root' })` are the idiomatic way to hold shared state across routes."*
+> *"In React, you'd use a custom hook here. In Angular, singletons provided via `@Injectable({ providedIn: 'root' })` or `@Service()` are the idiomatic ways to hold shared state across routes."*
 
 >  **If you call methods inside template expressions:**
 > *"Calling `getUserName()` in the template runs on every change detection cycle. Use a `computed()` signal instead so Angular only recomputes it when the underlying signal changes."*
