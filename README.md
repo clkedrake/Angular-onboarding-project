@@ -82,7 +82,7 @@ You will build a single-page application featuring an authentication flow and a 
 
 ---
 
-### Phase 5: Stretch Goal — State Persistence
+### Phase 5: State Persistence
 
 * [ ] Update `AuthService` to check `localStorage` when initialized.
 * [ ] If a token exists, automatically restore user state so refreshing the page on `/dashboard` does not log the user out.
