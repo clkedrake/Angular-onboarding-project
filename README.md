@@ -21,7 +21,8 @@ You will build a single-page application featuring an authentication flow and a 
 * [ ] Store the current user state using a writable `signal<User | null>(null)`.
 * [ ] Expose a `currentUser` read-only signal to components.
 * [ ] Create a `computed()` signal named `isAuthenticated` that returns `true` if `currentUser` is not `null`.
-* [ ] Implement a `login(user, token)` method that sets state and saves a mock token to `localStorage`.
+* [ ] Implement a `login()` method that sets state and saves a the token to `localStorage`.
+* [ ] Call https://cityclerk.insidela.org/ActiveDirAPI/api/user/login passing the values from the form.  The api requires a specific loginDTO with two properties. You can use the dev console in the browser to review the call and derive the required properties as it will provide explicit error messages. 
 * [ ] Implement a `logout()` method that clears state and removes the token from `localStorage`.
 
 
